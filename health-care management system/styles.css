@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    flex-direction: column;
+}
+
+#main-title {
+    font-size: 30px;
+    color: #206A5D;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#content-container {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Adds space between the image and the signup div */
+}
+
+#image-container {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#image-container img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 450px; /* Increase width of signup div */
+    max-width: 100%;
+    padding: 40px; /* Increase padding for larger size */
+    text-align: center;
+    position: relative;
+}
+
+.form-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-group label {
+    display: none;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #206A5D;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #206A5D;
+}
+
+.or {
+    margin: 20px 0;
+    color: #000000;
+}
+
+.links p {
+    margin-bottom: 10px;
+}
+
+.links button {
+    background: none;
+    border: none;
+    color: #206A5D;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: underline;
+}

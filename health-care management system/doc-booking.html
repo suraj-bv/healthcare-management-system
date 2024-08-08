@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors - Idea's Healthcare</title>
+    <link rel="icon" href="img/i (1).png" type="image/png">
+    <link rel="stylesheet" href="docstyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        /* Add these styles to your docstyles.css file */
+        .doctor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .doctor-card {
+            background-color: #FFFFFF;
+            border: 1px solid #BFDCAE;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .doctor-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .doctor-card img {
+            width: 100%;
+            max-width: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .doctor-card button {
+            background-color: #1A3636; /* Deep Blue */
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            padding: 10px 20px;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 10px;
+        }
+
+        .doctor-card button:hover {
+            background-color: #677D6A; /* Teal Blue */
+            transform: scale(1.05);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="img/i (1).png" alt="Logo" class="logo">
+                <h1>Idea's Healthcare</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section id="doctors">
+                <h2>Meet Our Doctors</h2>
+                <div class="doctor-grid">
+                    <div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. John Doe">
+                        <h3>Dr. John Doe</h3>
+                        <p><strong>Specialty:</strong> Cardiology</p>
+                        <p>Dr. Doe is a renowned cardiologist with over 15 years of experience in treating heart diseases.</p>
+                        <button onclick="bookAppointment('Dr. John Doe', '2024-08-01')">Book Appointment</button>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. John Smith">
+                        <h3>Dr. John Doe</h3>
+                        <p><strong>Specialty:</strong> Cardiology</p>
+                        <p>Dr. Doe is a renowned cardiologist with over 15 years of experience in treating heart diseases.</p>
+                        <button onclick="bookAppointment('Dr. John Smith', '2024-08-01')">Book Appointment</button>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. Jane Smith">
+                        <h3>Dr. Jane Smith</h3>
+                        <p><strong>Specialty:</strong> Pediatrics</p>
+                        <p>Dr. Smith specializes in pediatric care and is known for her compassionate approach to children's health.</p>
+                        <button onclick="bookAppointment('Dr. Jane Smith', '2024-08-01')">Book Appointment</button>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. Emily Johnson">
+                        <h3>Dr. Emily Johnson</h3>
+                        <p><strong>Specialty:</strong> Orthopedics</p>
+                        <p>Dr. Johnson focuses on diagnosing and treating musculoskeletal disorders.</p>
+                        <button onclick="bookAppointment('Dr. Emily Johnson', '2024-08-01')">Book Appointment</button>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. Michael Brown">
+                        <h3>Dr. Michael Brown</h3>
+                        <p><strong>Specialty:</strong> General Medicine</p>
+                        <p>Dr. Brown offers comprehensive medical care for a wide range of conditions.</p>
+                        <button onclick="bookAppointment('Dr. Michael Brown', '2024-08-01')">Book Appointment</button>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. Sarah Williams">
+                        <h3>Dr. Sarah Williams</h3>
+                        <p><strong>Specialty:</strong> Gynecology</p>
+                        <p>Dr. Williams provides specialized care in women's health and reproductive issues.</p>
+                        <button onclick="bookAppointment('Dr. Sarah Williams', '2024-08-01')">Book Appointment</button>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. Robert Taylor">
+                        <h3>Dr. Robert Taylor</h3>
+                        <p><strong>Specialty:</strong> Endocrinology</p>
+                        <p>Dr. Taylor focuses on hormone-related conditions and metabolic disorders.</p>
+                        <button onclick="bookAppointment('Dr. Robert Taylor', '2024-08-01')">Book Appointment</button>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. Linda Davis">
+                        <h3>Dr. Linda Davis</h3>
+                        <p><strong>Specialty:</strong> Dermatology</p>
+                        <p>Dr. Davis is an expert in treating skin conditions and cosmetic dermatology.</p>
+                        <button onclick="bookAppointment('Dr. Linda Davis', '2024-08-01')">Book Appointment</button>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. James Wilson">
+                        <h3>Dr. James Wilson</h3>
+                        <p><strong>Specialty:</strong> Neurology</p>
+                        <p>Dr. Wilson provides care for neurological disorders and brain diseases.</p>
+                        <button onclick="bookAppointment('Dr. James Wilson', '2024-08-01')">Book Appointment</button>
+                    </div>
+                    <!-- Add more doctor cards similarly -->
+                </div>
+            </section>
+            <a href="home.php" class="back-home-btn">Back to Home</a>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="confirmationMessage"></p>
+        </div>
+    </div>
+
+    <script src="doc-book.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F1F1E8; /* Light Blue */
+    color: #333;
+}
+
+header {
+    background-color: #1A3636; /* Deep Blue */
+    color: #fff;
+    padding: 30px 0; /* Increased padding for a larger banner */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between logo and heading */
+}
+
+.logo {
+    height: 90px; /* Increased the logo size */
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em; /* Increased font size for the heading */
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px; /* Move the profile button to the right */
+    top: 20px;
+}
+
+.user-info button {
+    background-color: #1A3636; /* Teal Blue */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: background-color 0.2s;
+    font-size: 16px;
+}
+
+.user-info button:hover {
+    background-color: #677D6A; /* Teal Blue */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main {
+    padding: 20px 0;
+}
+
+#doctors {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#doctors h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #1A3636; /* Deep Blue */
+}
+
+.doctor-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.doctor-card {
+    background-color: #FFFFFF; /* White for card background */
+    border: 1px solid #BFDCAE; /* Bright Blue */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.doctor-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.doctor-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    max-width: 120px; /* Fixed size for images */
+    margin-bottom: 15px;
+}
+
+.doctor-card h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #1A3636; /* Deep Blue */
+}
+
+.doctor-card p {
+    color: #666;
+    font-size: 1em;
+}
+
+.back-home-btn {
+    display: inline-block;
+    background-color: #1A3636; /* Deep Blue */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-home-btn:hover {
+    background-color: #677D6A; /* Teal Blue */
+    transform: scale(1.05);
+}
+
+.back-home-btn:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* Custom focus style */
+}
+
+@media (max-width: 768px) {
+    .doctor-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .doctor-card {
+        max-width: 100%;
+    }
+}

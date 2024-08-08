@@ -1,0 +1,83 @@
+<div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. John Doe">
+                        <h3>Dr. John Doe</h3>
+                        <p><strong>Specialty:</strong> Cardiology</p>
+                        <p>Dr. Doe is a renowned cardiologist with over 15 years of experience in treating heart diseases.</p>
+                        <button onclick="window.location.href='appointment.html';">Book Appointment</button>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. Jane Smith">
+                        <h3>Dr. Jane Smith</h3>
+                        <p><strong>Specialty:</strong> Pediatrics</p>
+                        <p>Dr. Smith specializes in pediatric care and is known for her compassionate approach to children's health.</p>
+                        <button onclick="window.location.href='appointment.html';">Book Appointment</button>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. Emily Johnson">
+                        <h3>Dr. Emily Johnson</h3>
+                        <p><strong>Specialty:</strong> Orthopedics</p>
+                        <p>Dr. Johnson focuses on diagnosing and treating musculoskeletal disorders.</p>
+                        <button onclick="window.location.href='appointment.html';">Book Appointment</button>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. Michael Brown">
+                        <h3>Dr. Michael Brown</h3>
+                        <p><strong>Specialty:</strong> General Medicine</p>
+                        <p>Dr. Brown offers comprehensive medical care for a wide range of conditions.</p>
+                        <button onclick="window.location.href='appointment.html';">Book Appointment</button>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. Sarah Williams">
+                        <h3>Dr. Sarah Williams</h3>
+                        <p><strong>Specialty:</strong> Gynecology</p>
+                        <p>Dr. Williams provides specialized care in women's health and reproductive issues.</p>
+                        <button onclick="window.location.href='appointment.html';">Book Appointment</button>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. Robert Taylor">
+                        <h3>Dr. Robert Taylor</h3>
+                        <p><strong>Specialty:</strong> Endocrinology</p>
+                        <p>Dr. Taylor focuses on hormone-related conditions and metabolic disorders.</p>
+                        <button onclick="window.location.href='appointment.html';">Book Appointment</button>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. Linda Davis">
+                        <h3>Dr. Linda Davis</h3>
+                        <p><strong>Specialty:</strong> Dermatology</p>
+                        <p>Dr. Davis is an expert in treating skin conditions and cosmetic dermatology.</p>
+                        <button onclick="window.location.href='appointment.html';">Book Appointment</button>
+                    </div>
+                    <div class="doctor-card">
+                        <img src="img/doc.png" alt="Dr. James Wilson">
+                        <h3>Dr. James Wilson</h3>
+                        <p><strong>Specialty:</strong> Neurology</p>
+                        <p>Dr. Wilson provides care for neurological disorders and brain diseases.</p>
+                        <button onclick="window.location.href='appointment.html';">Book Appointment</button>
+                    </div>
+
+
+                    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+    <div style="text-align:center; padding:15%;">
+      <p  style="font-size:50px; font-weight:bold;">
+       Hello  <?php 
+       if(isset($_SESSION['email'])){
+        $email=$_SESSION['email'];
+        $query=mysqli_query($conn, "SELECT users.* FROM `users` WHERE users.email='$email'");
+        while($row=mysqli_fetch_array($query)){
+            echo $row['firstName'].' '.$row['lastName'];
+        }
+       }
+       ?>
+       :)
+      </p>
+      <button><a href="logout.php">Logout</a></button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Appointments - Idea's Healthcare</title>
+    <link rel="icon" href="img/i (1).png" type="image/png">
+    <link rel="stylesheet" href="docstyles.css">
+    <style>
+        /* Add these styles to your docstyles.css file */
+        .appointment-list {
+            padding: 20px;
+            list-style: none;
+            margin: 0;
+        }
+
+        .appointment-item {
+            background-color: #FFFFFF;
+            border: 1px solid #BFDCAE;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="img/i (1).png" alt="Logo" class="logo">
+                <h1>Idea's Healthcare</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2>My Appointments</h2>
+            <ul id="appointmentList" class="appointment-list">
+                <!-- Appointment items will be dynamically inserted here -->
+            </ul>
+            <a href="home.php" class="back-home-btn">Back to Home</a> 
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const appointmentList = document.getElementById('appointmentList');
+            let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+            
+            appointments.forEach(app => {
+                const listItem = document.createElement('li');
+                listItem.className = 'appointment-item';
+                listItem.textContent = `Appointment with ${app.doctor} on ${app.date}`;
+                appointmentList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>
