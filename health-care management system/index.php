@@ -46,7 +46,6 @@
                 <button id="signInButton">Sign In</button>
             </div>
         </div>
-
         <div class="container" id="signIn">
             <h1 class="form-title">Sign In</h1>
             <form method="post" action="register.php">
